@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'formulaire_player.css' %}">
+    <script src="https://kit.fontawesome.com/3d745be566.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap" rel="stylesheet">
+    <title>Formulaire - Ajout d'un Joueur</title>
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <div class="sidebar">
+                <div class="profile">
+                    <img src="{% static 'logo_csgo.png' %}" alt="image t logo">
+                    <h3>Counter Strike-  <br> Global Offensive</h3>
+                </div>
+                <ul>
+                    <li>
+                        <a href="/player/">
+                            <span class="icon"><i class="fa fa-person" aria-hidden="true"></i></span>
+                            <span class="item">Joueurs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/team/">
+                            <span class="icon"><i class="fa fa-people-group" aria-hidden="true"></i></span>
+                            <span class="item">Team</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/player/affiche/{{ randomID_player }}/">
+                            <span class="icon"><i class="fa fa-random"></i></span>
+                            <span class="item">Random Player</span>
+                        </a>
+                    </li>
+                    {% if id_player == none %}
+                    {% else %}
+                    <li>
+                        <a href="/player/formulaire">
+                            <span class="icon"><i class="fa fa-plus"></i></span>
+                            <span class="item">Create new</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Formulaire :</h1><br><br>
+
+            {% if id_player == none %}
+                <form method="post" action="/player/traitement/">  
+            {% else %}
+                <form method="post" action="/player/updatetraitement/{{id_player}}/">
+            {% endif %}
+            {% csrf_token %}
+            {{ form_player.as_ul }}
+            <input class="submit-input" type="submit" value="envoyer"\>
+        </div>
+        </form>
+    </main>
+</body>
+</html>

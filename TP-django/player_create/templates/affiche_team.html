@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'affiche_team.css' %}">
+    <script src="https://kit.fontawesome.com/3d745be566.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap" rel="stylesheet">
+    <title>Détails du team</title>
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <div class="sidebar">
+                <div class="profile">
+                    <img src="{% static 'logo_csgo.png' %}">
+                    <h3>Counter Strike- <br> Global Offensive</h3>
+                </div>
+                <ul>
+                    <li>
+                        <a href="/player/">
+                            <span class="icon"><i class="fa fa-person" aria-hidden="true"></i></span>
+                            <span class="item">Joueurs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/team/">
+                            <span class="icon"><i class="fa fa-people-group" aria-hidden="true"></i></span>
+                            <span class="item">Team</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/team/affiche/{{ randomID_team }}/">
+                            <span class="icon"><i class="fa fa-random"></i></span>
+                            <span class="item">Random Team</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/team/formulaire">
+                            <span class="icon"><i class="fa fa-plus"></i></span>
+                            <span class="item">Create new</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Nom : {{team.nom}}  <a class="btn" href="/team/update/{{team.id}}/"> Update </a>    <a class="btn" href="/team/delete/{{team.id}}/"> Delete </a></h2>
+            <p>Budget : {{team.budget}}$ <a class="btn" href="/team/update/{{team.id}}/"> Add player to this team </a> </p>
+            <p>Location : {{team.location}} </p>
+            <div class="team-profile">
+                <img class="team-profile" src="{{ team.logo }}"/>
+            </div>
+            <div>Voici le contenue de l'équipe {{team.nom}} :</div>
+            <div class="team_container">
+                {% for player in team_container %}
+                <tb class="player_of_team">{{ player.nom }} : {{ player.role}}</tb><br>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+</body>
+</html>

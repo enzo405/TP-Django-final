@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'index_team.css' %}">
+    <script src="https://kit.fontawesome.com/3d745be566.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap" rel="stylesheet">
+    <title>Affichage des toutes les Équipes</title>
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <div class="sidebar">
+                <div class="profile">
+                    <img src="{% static 'logo_csgo.png' %}" alt="image ct logo">
+                    <h3>Counter Strike- <br> Global Offensive</h3>
+                </div>
+                <ul>
+                    <li>
+                        <a href="/player/">
+                            <span class="icon"><i class="fa fa-person" aria-hidden="true"></i></span>
+                            <span class="item">Joueurs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/team/">
+                            <span class="icon"><i class="fa fa-people-group" aria-hidden="true"></i></span>
+                            <span class="item">Team</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/team/affiche/{{ randomID_team }}/">
+                            <span class="icon"><i class="fa fa-random"></i></span>
+                            <span class="item">Random team</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/team/formulaire">
+                            <span class="icon"><i class="fa fa-plus"></i></span>
+                            <span class="item">Create new</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Voici la liste des équipe que vous avez enregistrés:</h2><br>
+                <ol>
+                    {% for l in listALL_team %}
+                    <li> {{l.nom}} : se situe en {{l.location}} avec un budget de {{l.budget}}$    <a href="/team/affiche/{{l.id}}/"> Détails </a></li>
+                    {% endfor %}
+                </ol>
+        </div> 
+        </form>
+    </main>
+</body>
+</html>
