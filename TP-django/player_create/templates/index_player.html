@@ -3,7 +3,7 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'index_player.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
     <script src="https://kit.fontawesome.com/3d745be566.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap" rel="stylesheet">
     <title>Affichage des tout les joueurs enregistrés</title>
@@ -44,8 +44,8 @@
                 </ul>
             </div>
         </div>
-        <div class="container">
-            <h2>Voici la liste des joueurs que vous avez enregistrés:</h2><br>
+        <div class="index_container">
+            <h2>Voici la liste des joueurs:</h2><br>
                 <ol>
                     {% for l in listALL_player %}
                     <li> {{ l }}  <a href="/player/affiche/{{l.id}}/"> Détails </a></li>

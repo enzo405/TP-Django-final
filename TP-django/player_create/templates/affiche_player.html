@@ -3,7 +3,7 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'affiche_player.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
     <script src="https://kit.fontawesome.com/3d745be566.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap" rel="stylesheet">
     <title>Détails du Joueur</title>
@@ -45,13 +45,12 @@
             </div>
         </div>
         <div class="container">
-            <h1>Voici le joueur que vous venez d'ajouter:</h1><br>
             <h2>Nom : {{player.nom}}  <a href="/player/update/{{player.id}}/"> Update </a>    <a href="/player/delete/{{player.id}}/"> Delete </a></h2>
             <p>Prix : {{player.prix}}$</p>
             <p>Rôles : {{player.role}} </p>
             <p>Âge : {{player.age}} </p>
-            <div class="player-profile">
-                <img class="player-profile" src="{{player.profile}}"/>
+            <div class="profile">
+                <img class="profile" src="{{player.profile}}"/>
             </div>
         </div>
     </main>

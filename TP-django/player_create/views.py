@@ -2,7 +2,7 @@ from pyexpat import model
 from tkinter.tix import COLUMN
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from .forms import player, Team_forms
+from .forms import player, Team_forms, player_without_team
 from . import models
 import random
 
@@ -80,7 +80,6 @@ def delete_player(request, id):
 	player = models.Player.objects.get(pk=id)
 	player.delete()
 	return HttpResponseRedirect("/player/")
-
 
 
 def formulaire_team(request):
@@ -163,17 +162,26 @@ def delete_team(request, id):
 	return HttpResponseRedirect("/team/")
 
 
+def formulaire_pint(request,id):
+	form = player_without_team()
+	return render(request, 'formulaire_pint.html', {'form': form, "id":id})
+
+def traitement_pint(request, id):
+	if request.method == "POST":
+		form = player_without_team(request.POST)
+		if form.is_valid():
+			p = form.save(commit=False)
+			p.team_id = id
+			p.team = models.Team_models.objects.get(pk=id)
+			p.save()
+			return HttpResponseRedirect(f"/team/affiche/{id}/")
+		else:
+			return render(request, 'affiche_team.html', {'form': form, "id":id})
 
 
 
-def traitement_PtoT(request, id):
-    if request.method == "POST":
-        form = player(request.POST)
-        if form.is_valid():
-            p = form.save(commit=False)
-            p.team_id = id
-            p.team = models.Team_models.objects.get(pk=id)
-            p.save()
-            return render(request, 'affiche_team.html', {'joueur': p, "id":id})
-        else:
-            return render(request, 'formulaire_player.html', {'form': form, "id":id})
+#TO DO
+# faire une liste déroulante pour le bouton "create new" avec : "create new team" "create new player" "add plyaer to team", le 'add player to team' aura une liste déroulante qui montre toute les team
+# afficher les données dans des cartes (pour détails)
+# avoir une page logs qui affiche chaque ajout des team et player
+# pouvoir créer un joueur directement depuis la team

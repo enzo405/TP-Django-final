@@ -1,0 +1,184 @@
+*{
+	list-style: none;
+	text-decoration: none;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Quantico','Changa','Noto Sans',serif;
+	margin: 0px;
+}
+
+body, html {
+	height: 100%;
+	font-family: sans-serif;
+	background-color: #101634; /* For browsers that do not support gradients */
+	background-image: url(csgo.png);	
+	background-size: cover;
+}
+
+
+.wrapper .sidebar{
+	background-color: rgba(22, 22, 22, 0.95);
+	width: 220px;
+    height: 100%;
+	padding: 20px 0;
+}
+
+main {
+    height: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+}
+  
+.wrapper .sidebar .profile{
+	margin-bottom: 30px;
+	text-align: center;
+}
+  
+.wrapper .sidebar .profile img{
+	display: block;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+  
+.wrapper .sidebar .profile h3{
+	color: #ffffff;
+	margin: 10px 0 5px;
+}
+  
+.wrapper .sidebar .profile p{
+	color: rgb(206, 240, 253);
+	font-size: 14px;
+}
+  
+.wrapper .sidebar ul li a{
+	display: block;
+	padding: 13px 30px;
+	color: rgb(241, 237, 237);
+	font-size: 16px;
+	position: relative;
+}
+
+
+.wrapper .sidebar ul li a .icon{
+	color: #dee4ec;
+	width: 30px;
+	display: inline-block;
+}
+  
+
+.wrapper .sidebar ul li a:hover{
+	color: #ce8404;
+}
+
+
+div.profile{
+    margin-top: 6px;
+	margin-bottom: 30px;
+	max-width: 200px;
+	max-height: 200px;
+}
+
+img.profile{
+	height: 100%;
+	width: 100%;
+}
+
+.submit-input{
+    cursor: pointer;
+    margin-top: 15px;
+	background-color: rgba(255,255,255,0.4);
+    padding: 2px 4px 2px 4px;
+	border: none;
+}
+
+h1{
+    text-decoration: underline;
+}
+
+
+.index_container{
+    margin-top: 20px;
+	padding-right: 20px;
+    color: white;
+	float: left;
+	margin-left: 40%;
+	width: auto;
+	max-width: 620px;
+	min-width: 500px;
+}
+
+.index_container li{
+    height: auto;
+    width: auto;	
+	border-radius: 10px;
+	background-color: rgba(255,255,255,0.2);
+	padding: 2px 2px 2px 6px;
+}
+
+.index_container li:nth-child(2n){
+	background-color: rgba(255,255,255,0.4);
+}
+
+.index_container a{
+	float: right;
+	margin-left: 30px;
+	padding-right: 10px;
+}
+
+
+.container{
+    margin-top: 20px;
+    color: white;
+	float: left;
+	margin-left: 40%;
+    padding: 30px;
+	height: fit-content;
+}
+
+.container h2 a{
+	text-decoration: none;
+	color: #551A8B;
+	margin-left: 25px;
+	background-color: #101634;
+	padding: 4px 4px 4px 4px;
+	font-size: medium;
+	font-weight: 500;
+}
+
+.container li{
+    height: 50px;
+    width: 500px;
+}
+
+.container li,input,select{
+    float: right;
+	min-width: 160px;
+    margin-right: 38px;
+    margin-top: 5px;
+}
+
+.btn{
+	text-decoration: none;
+	color: #551A8B;
+	float: right;
+	margin-left: 4px;
+	background-color: #101634;
+	padding: 3px 3px 3px 3px;
+	font-size: small;
+	font-weight: 400;
+}
+
+.team_container{
+	height: auto;
+}
+
+.player_of_team{
+	font-style: italic;
+	color: black;
+}
+
+h3{
+	color: #fff;
+}

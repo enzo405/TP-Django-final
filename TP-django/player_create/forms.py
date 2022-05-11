@@ -15,6 +15,17 @@ class player(ModelForm):
 			'team' : _('Team du joueur')
 			}
 
+class player_without_team(ModelForm):
+	class Meta:
+		model = models.Player_without_team
+		fields = ('nom', 'prix', 'role', 'age','profile')
+		labels = {
+			'nom' : _('Nom'),
+			'prix' : _("Prix du joueur") ,
+			'role' : _("Rôle du joueur"),
+			'age' : _('Âge'),
+			'profile' : _('Photo Profile'),
+			}
 
 class Team_forms(ModelForm):
 	class Meta:

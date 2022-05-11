@@ -3,7 +3,7 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'affiche_team.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
     <script src="https://kit.fontawesome.com/3d745be566.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap" rel="stylesheet">
     <title>Détails du team</title>
@@ -46,10 +46,10 @@
         </div>
         <div class="container">
             <h2>Nom : {{team.nom}}  <a class="btn" href="/team/update/{{team.id}}/"> Update </a>    <a class="btn" href="/team/delete/{{team.id}}/"> Delete </a></h2>
-            <p>Budget : {{team.budget}}$ <a class="btn" href="/team/update/{{team.id}}/"> Add player to this team </a> </p>
+            <p>Budget : {{team.budget}}$ <a class="btn" href="/team/formulaire-player/{{team.id}}/"> Add player to this team </a> </p>
             <p>Location : {{team.location}} </p>
-            <div class="team-profile">
-                <img class="team-profile" src="{{ team.logo }}"/>
+            <div class="profile">
+                <img class="profile" src="{{ team.logo }}"/>
             </div>
             <div>Voici le contenue de l'équipe {{team.nom}} :</div>
             <div class="team_container">

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     {% load static %}
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
     <script src="https://kit.fontawesome.com/3d745be566.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap" rel="stylesheet">
-    <title>Affichage des toutes les Équipes</title>
+    <title>Formulaire - Ajout d'une nouvelle équipe</title>
 </head>
 <body>
     <main>
         <div class="wrapper">
             <div class="sidebar">
                 <div class="profile">
-                    <img src="{% static 'logo_csgo.png' %}" alt="image ct logo">
-                    <h3>Counter Strike- <br> Global Offensive</h3>
+                    <img src="{% static 'logo_csgo.png' %}" alt="image t logo">
+                    <h3>Counter Strike-  <br> Global Offensive</h3>
                 </div>
                 <ul>
                     <li>
@@ -32,26 +32,28 @@
                     <li>
                         <a href="/team/affiche/{{ randomID_team }}/">
                             <span class="icon"><i class="fa fa-random"></i></span>
-                            <span class="item">Random team</span>
+                            <span class="item">Random Team</span>
                         </a>
                     </li>
+                    {% if id_team == none %}
+                    {% else %}
                     <li>
                         <a href="/team/formulaire">
                             <span class="icon"><i class="fa fa-plus"></i></span>
                             <span class="item">Create new</span>
                         </a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
-        <div class="index_container">
-            <h2>Voici la liste des équipes:</h2><br>
-                <ol>
-                    {% for l in listALL_team %}
-                    <li> {{l.nom}} : situé en {{l.location}} avec un budget de {{l.budget}}$    <a href="/team/affiche/{{l.id}}/"> Détails </a></li>
-                    {% endfor %}
-                </ol>
-        </div> 
+        <div class="container">
+            <h1>Formulaire :</h1><br><br>
+            <form method="post" action="/team/traitement-player/{{ id }}/">
+           {% csrf_token %}
+           {{ form.as_ul }}
+            <input class="submit-input" type="submit" value="envoyer"\>
+        </div>
         </form>
     </main>
 </body>

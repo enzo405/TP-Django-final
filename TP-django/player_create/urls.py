@@ -17,4 +17,7 @@ urlpatterns = [
     path('team/update/<int:id>/', views.update_team),
     path('team/updatetraitement/<int:id>/', views.updatetraitement_team),
     path('team/delete/<int:id>/', views.delete_team),
+
+    path('team/formulaire-player/<int:id>/', views.formulaire_pint),
+    path('team/traitement-player/<int:id>/', views.traitement_pint)
 ]
