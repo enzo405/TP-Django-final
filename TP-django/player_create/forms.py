@@ -17,7 +17,7 @@ class player(ModelForm):
 
 class player_without_team(ModelForm):
 	class Meta:
-		model = models.Player_without_team
+		model = models.Player
 		fields = ('nom', 'prix', 'role', 'age','profile')
 		labels = {
 			'nom' : _('Nom'),

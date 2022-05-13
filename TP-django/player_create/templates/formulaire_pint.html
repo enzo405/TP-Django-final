@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="container">
-            <h1>Formulaire :</h1><br><br>
+            <h1>Formulaire : Team <a class="team_name" href="/team/affiche/{{ id }}"> {{ team.nom }}</a> </h1><br><br>
             <form method="post" action="/team/traitement-player/{{ id }}/">
            {% csrf_token %}
            {{ form.as_ul }}

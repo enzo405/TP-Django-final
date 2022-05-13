@@ -182,3 +182,9 @@ h1{
 h3{
 	color: #fff;
 }
+
+
+.team_name{
+	color: gray;
+	font-style: italic;
+}

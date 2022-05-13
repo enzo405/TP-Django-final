@@ -164,7 +164,9 @@ def delete_team(request, id):
 
 def formulaire_pint(request,id):
 	form = player_without_team()
-	return render(request, 'formulaire_pint.html', {'form': form, "id":id})
+	form.nom = models.Team_models.objects.get(pk=id)
+	team_nom = form.nom
+	return render(request, 'formulaire_pint.html', {'form': form, "id":id, "team" :team_nom})
 
 def traitement_pint(request, id):
 	if request.method == "POST":
@@ -176,7 +178,7 @@ def traitement_pint(request, id):
 			p.save()
 			return HttpResponseRedirect(f"/team/affiche/{id}/")
 		else:
-			return render(request, 'affiche_team.html', {'form': form, "id":id})
+			return render(request, 'formulaire_pint.html', {'form': form, "id":id})
 
 
 
@@ -184,4 +186,3 @@ def traitement_pint(request, id):
 # faire une liste déroulante pour le bouton "create new" avec : "create new team" "create new player" "add plyaer to team", le 'add player to team' aura une liste déroulante qui montre toute les team
 # afficher les données dans des cartes (pour détails)
 # avoir une page logs qui affiche chaque ajout des team et player
-# pouvoir créer un joueur directement depuis la team
