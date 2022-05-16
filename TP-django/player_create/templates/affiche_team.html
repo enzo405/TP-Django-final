@@ -10,7 +10,7 @@
 </head>
 <body>
     <main>
-        <div class="wrapper">
+        <div class="sideblock">
             <div class="sidebar">
                 <div class="profile">
                     <img src="{% static 'logo_csgo.png' %}">
@@ -54,7 +54,7 @@
             <div>Voici le contenue de l'équipe {{team.nom}} :</div>
             <div class="team_container">
                 {% for player in team_container %}
-                <tb class="player_of_team">{{ player.nom }} : {{ player.role}}</tb><br>
+                <tb class="player_of_team">{{ player.nom }} : {{ player.role}} <a class="" href="/player/affiche/{{player.id}}/"> Détails </a></tb><br>
                 {% endfor %}
             </div>
         </div>

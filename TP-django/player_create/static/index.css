@@ -16,7 +16,7 @@ body, html {
 }
 
 
-.wrapper .sidebar{
+.sideblock .sidebar{
 	background-color: rgba(22, 22, 22, 0.95);
 	width: 220px;
     height: 100%;
@@ -29,12 +29,12 @@ main {
 	flex-wrap: nowrap;
 }
   
-.wrapper .sidebar .profile{
+.sideblock .sidebar .profile{
 	margin-bottom: 30px;
 	text-align: center;
 }
   
-.wrapper .sidebar .profile img{
+.sideblock .sidebar .profile img{
 	display: block;
 	width: 100px;
 	height: 100px;
@@ -42,17 +42,17 @@ main {
 	margin: 0 auto;
 }
   
-.wrapper .sidebar .profile h3{
+.sideblock .sidebar .profile h3{
 	color: #ffffff;
 	margin: 10px 0 5px;
 }
   
-.wrapper .sidebar .profile p{
+.sideblock .sidebar .profile p{
 	color: rgb(206, 240, 253);
 	font-size: 14px;
 }
   
-.wrapper .sidebar ul li a{
+.sideblock .sidebar ul li a{
 	display: block;
 	padding: 13px 30px;
 	color: rgb(241, 237, 237);
@@ -61,14 +61,14 @@ main {
 }
 
 
-.wrapper .sidebar ul li a .icon{
+.sideblock .sidebar ul li a .icon{
 	color: #dee4ec;
 	width: 30px;
 	display: inline-block;
 }
   
 
-.wrapper .sidebar ul li a:hover{
+.sideblock .sidebar ul li a:hover{
 	color: #ce8404;
 }
 
@@ -95,6 +95,7 @@ img.profile{
 
 h1{
     text-decoration: underline;
+	font-style: oblique;
 }
 
 

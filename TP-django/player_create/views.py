@@ -181,8 +181,5 @@ def traitement_pint(request, id):
 			return render(request, 'formulaire_pint.html', {'form': form, "id":id})
 
 
-
 #TO DO
-# faire une liste déroulante pour le bouton "create new" avec : "create new team" "create new player" "add plyaer to team", le 'add player to team' aura une liste déroulante qui montre toute les team
 # afficher les données dans des cartes (pour détails)
-# avoir une page logs qui affiche chaque ajout des team et player
