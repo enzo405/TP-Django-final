@@ -36,9 +36,15 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/player/formulaire">
+                            <span class="icon"><i class="fa fa-plus"></i></span>
+                            <span class="item">Create Player</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/team/formulaire">
                             <span class="icon"><i class="fa fa-plus"></i></span>
-                            <span class="item">Create new</span>
+                            <span class="item">Create Team</span>
                         </a>
                     </li>
                 </ul>
@@ -46,13 +52,33 @@
         </div>
         <div class="index_container">
             <h2>Voici la liste des équipes:</h2><br>
-                <ol>
-                    {% for l in listALL_team %}
-                    <li> {{l.nom}} : situé en {{l.location}} avec un budget de {{l.budget}}$    <a href="/team/affiche/{{l.id}}/"> Détails </a></li>
-                    {% endfor %}
-                </ol>
+			<table class="table_team">
+				<thead>
+					<tr>
+					<th scope="col">Nom</th>
+					<th scope="col">Location</th>
+					<th scope="col">Budget</th>
+					<th scope="col">Détails</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for l in listALL_team %}
+					<tr scope="row">
+						<td> {{ l.nom }} </td>
+						<td> {{ l.location }} </td>
+						<td> {{ l.budget }} €</td>
+						<td class="table-detail"><a href="/team/affiche/{{l.id}}/"> Détails </a></td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>	
         </div> 
         </form>
     </main>
 </body>
 </html>
+
+
+
+
+	

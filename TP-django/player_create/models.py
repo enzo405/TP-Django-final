@@ -13,7 +13,7 @@ role_choice = [
 
 age_choice = [
     ("-18","-18 ans"),
-    ("entre 18 et 26","entre 18 et 26"),
+    ("+18 / -26","+18 / -26"),
     ("+26","+26 ans"),
 ]
 
@@ -41,7 +41,7 @@ class Player(models.Model):
 
 
 class Team_models(models.Model):
-    nom = models.CharField(max_length=10)
+    nom = models.CharField(max_length=15)
     location = models.CharField(max_length=20 ,choices=location_choice)
     budget = models.IntegerField(blank=False)
     logo = models.URLField(null= True)

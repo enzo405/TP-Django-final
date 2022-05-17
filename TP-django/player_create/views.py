@@ -97,7 +97,7 @@ def formulaire_team(request):
 			return render(request,"formulaire_team.html",{"form_team": form, "randomID_team": random_id})
 	else :
 		form = Team_forms()
-		return render(request,"formulaire_team.html",{"form_team" : form})
+		return render(request,"formulaire_team.html",{"form_team" : form , "randomID_team": random_id})
 
 def traitement_team(request):
 	ALLekip = models.Team_models.objects.all()

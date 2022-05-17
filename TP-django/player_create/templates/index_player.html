@@ -38,7 +38,13 @@
                     <li>
                         <a href="/player/formulaire">
                             <span class="icon"><i class="fa fa-plus"></i></span>
-                            <span class="item">Create new</span>
+                            <span class="item">Create Player</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/team/formulaire">
+                            <span class="icon"><i class="fa fa-plus"></i></span>
+                            <span class="item">Create Team</span>
                         </a>
                     </li>
                 </ul>
@@ -46,11 +52,30 @@
         </div>
         <div class="index_container">
             <h2>Voici la liste des joueurs:</h2><br>
-                <ol>
-                    {% for l in listALL_player %}
-                    <li> {{ l }}  <a href="/player/affiche/{{l.id}}/"> Détails </a></li>
-                    {% endfor %}
-                </ol>
+                <table class="table_player">
+                    <thead>
+                        <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Rôle</th>
+                        <th scope="col">Âge</th>
+                        <th scope="col">Team</th>
+                        <th scope="col">Détails</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for l in listALL_player %}
+                        <tr scope="row">
+                            <td> {{ l.nom }} </td>
+                            <td> {{ l.prix }} </td>
+                            <td> {{ l.role }} </td>
+                            <td> {{ l.age }} ans</td>
+                            <td> {{ l.team }} </td>
+                            <td class="table-detail"><a href="/player/affiche/{{l.id}}/"> Détails </a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
         </div> 
         </form>
     </main>
